@@ -1,5 +1,18 @@
 name: python api
-on: [push]
+on:
+  workflow_dispatch:
+    inputs: 
+      deployment_target:
+        description: choose tests set
+        required: true
+        type: choice
+        default: all
+        options: 
+          - smoke
+          - regression
+          - extended
+          - all
+      
 
 jobs: 
   run-tests: 
