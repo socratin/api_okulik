@@ -56,7 +56,7 @@ jobs:
       - name: Save allure report
         uses: actions/upload-artifact@v3
         with:
-          name: allure-report
+          name: _site
           path: _site
           retention-days: 7
   publish-report:
