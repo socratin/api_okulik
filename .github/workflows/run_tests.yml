@@ -30,13 +30,13 @@ jobs:
         run: pip install -r requir.txt
       - name: run all tests
         if: "github.event.inputs.deployment_target == 'all'"
-        run: pytest
+        run: pytest --alluredir=allure-results
       - name: run smoke tests
         if: "github.event.inputs.deployment_target == 'smoke'"
-        run: pytest -m smoke
+        run: pytest -m smoke --alluredir=allure-results
       - name: run regression tests
         if: "github.event.inputs.deployment_target == 'regression'"
-        run: pytest -m regression
+        run: pytest -m regression --alluredir=allure-results
       - name: run extended tests
         if: "github.event.inputs.deployment_target == 'extended'"
-        run: pytest -m extended
+        run: pytest -m extended --alluredir=allure-results
